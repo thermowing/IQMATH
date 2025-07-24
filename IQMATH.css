@@ -325,7 +325,7 @@ body {
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url("../IQMATH/IMAGES/banner.jpg") center/cover no-repeat fixed;
+    url("banner.jpg") center/cover no-repeat fixed;
   position: relative;
 }
 
