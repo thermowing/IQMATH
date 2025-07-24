@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2 id="form-title">Sign In</h2>
+            <form id="auth-form">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+                <p id="toggle-text">Don't have an account? <a href="#" id="toggle-link">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const formTitle = document.getElementById("form-title");
+        const authForm = document.getElementById("auth-form");
+        const toggleText = document.getElementById("toggle-text");
+        const toggleLink = document.getElementById("toggle-link");
+        const submitButton = document.querySelector(".btn");
+
+        toggleLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (formTitle.textContent === "Sign In") {
+                formTitle.textContent = "Sign Up";
+                submitButton.textContent = "Sign Up";
+                toggleText.innerHTML = "Already have an account? <a href='#' id='toggle-link'>Sign In</a>";
+            } else {
+                formTitle.textContent = "Sign In";
+                submitButton.textContent = "Sign In";
+                toggleText.innerHTML = "Don't have an account? <a href='#' id='toggle-link'>Sign Up</a>";
+            }
+        });
+    </script>
+</body>
+</html>

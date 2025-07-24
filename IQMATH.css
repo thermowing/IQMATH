@@ -1,0 +1,568 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Margarine&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /*------------Font Family-----------*/
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Inter", sans-serif;
+  --ff-design: "Satisfy", cursive;
+  --ff-brand: "Margarine", sans-serif;
+  --ff-Main: "Merriweather", sans-serif;
+
+  /*---------:-Colors--------*/
+  --clr-white: #fff;
+  --clr-dark: #333;
+  --clr-lightred: #f66773;
+  --clr-red: rgba(255, 0, 0);
+  --clr-primary: #e9e9f2;
+  --clr-secondary: #540f0f;
+  --clr-blue-1: #030a8c;
+  --clr-blue-2: #020873;
+  --clr-blue-3: #565bc1;
+  --clr-grey-1: #102a42;
+  --clr-grey-2: #617d98;
+  --clr-grey-3: #f1f5f8;
+  --clr-com1-lr: #00d4ff;
+  --clr-com2-s: #ff9913;
+  --transition1: all 0.3s linear;
+  --transition2: all 0.2s linear;
+}
+/*----------GLOBAL CSS WHICH CAN BE USED FOR ANY PROJECT UPTO NAV BAR BLOCK , THIS CAN BE USED FOR REFERENCE ANYWHERE IN THIS PROJECT----*/
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.5rem; /*.75 can also be implemented*/
+}
+
+h1 {
+  font-size: 3rem; /*here the default size of h1 header is changinging to 3rem*/
+}
+h2 {
+  font-size: 2rem; /*here the default size of h2 header is changinging to 2rem*/
+}
+h3 {
+  font-size: 1.5rem; /*here the default size of h3 header is changinging to 1.5rem*/
+}
+h4 {
+  font-size: 0.875rem; /*here the default size of h4 header is changinging to 0.875rem*/
+}
+p {
+  margin-bottom: 1.75rem; /*here the default size of paragraph tag is changinging to 1.75rem*/
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 0.875rem;
+  background-color: white;
+  color: var(--clr-blue-2);
+  line-height: 1.5;
+}
+
+/*----------------------Anchor tag Editing-------*/
+.btn {
+  background-color: var(--clr-lightred);
+  text-transform: capitalize;
+  color: #ffffff;
+  padding: 0.185cm 0.5cm;
+  letter-spacing: 0.75px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition2);
+  border-top: 0px;
+  cursor: pointer;
+  border-radius: 5px;
+  /*box-shadow: 0 0.001rem 0.45rem rgb(255, 255, 255);*/
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--clr-blue-3);
+  text-shadow: #ffffff;
+  color: #f1f5f8;
+  /*font-size: 1.25rem;*/
+  font-weight: 900;
+  outline: 0.125rem solid var(--clr-blue-3);
+  outline-offset: 0.25rem;
+  transition: var(--transition2);
+  outline: 0.125rem solid var(--clr-blue-2);
+  outline-offset: 0.15rem;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+/*.product-btn {
+  background-color: var(--clr-lightred);
+  text-transform: capitalize;
+  color: #ffffff;
+  padding: 0.185cm 0.5cm;
+  letter-spacing: 0.75px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition2);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  /*box-shadow: 0 0.001rem 0.45rem rgb(255, 255, 255);
+  margin-top: 1rem;
+  place-items: center;
+}
+
+.product-btn:hover {
+  background-color: var(--clr-blue-3);
+  text-shadow: #ffffff;
+  color: #f1f5f8;
+  /*font-size: 1.25rem;
+  outline: 0.125rem solid var(--clr-blue-3);
+  outline-offset: 0.25rem;
+  transition: var(--transition2);
+  outline: 0.125rem solid var(--clr-blue-2);
+  outline-offset: 0.15rem;
+  box-shadow: none;
+  border-radius: 10px;
+}*/
+
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.section-center {
+  padding: 3rem 1.5rem;
+  width: 90vm;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+.section-title h2 {
+  font-family: var(--ff-design);
+  color: var(--clr-red);
+  font-size: 2rem;
+}
+.section-title {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95%;
+    padding: 4rem 1rem;
+  }
+}
+/*------------NavBar-------*/
+.nav-btn svg {
+  position: fixed;
+  top: 3%;
+  left: 3%;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  z-index: 1;
+}
+
+/*------------Stylinging the  contents of NavBar----------*/
+#nav-check {
+  display: none;
+}
+#nav-check:checked ~ .navbar {
+  transform: translateX(0%);
+  transition: var(--transition2);
+}
+.navbar {
+  position: fixed;
+  background-color: rgb(0, 0, 0);
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  z-index: 2;
+}
+.navbar h3 {
+  padding: 2rem 0.75rem;
+  /*color: white;*/
+  font-family: var(--ff-secondary);
+  font-size: large;
+  text-transform: uppercase;
+  top: 20;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 800;
+  color: transparent;
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-red) 75%,
+    var(--clr-secondary)
+  );
+  background-clip: text;
+  margin-bottom: -1rem;
+}
+/*.navbar h3:hover {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: var(--transition);
+*/
+.navbar-header img {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.navbar-header {
+  position: relative;
+}
+
+.nav-close {
+  position: absolute;
+
+  right: 20px;
+  top: 33px;
+  height: 20px;
+  width: 20px;
+}
+
+.nav-close svg {
+  fill: grey;
+}
+
+.nav-close:hover svg {
+  cursor: pointer;
+  fill: white;
+  transition: var(--transition1);
+  height: 25px;
+  width: 25px;
+}
+
+.nav-items {
+  list-style-type: none;
+  margin-top: 2rem;
+}
+
+.nav-link {
+  display: block;
+  color: #f6f6f6;
+  text-transform: capitalize;
+  font-family: var(--ff-secondary);
+  font-size: 1rem;
+  padding: 0.75rem /*top&bottom*/ 1rem /*left&right*/;
+  letter-spacing: 0.5px;
+  transition: var(--transition1);
+  font-weight: 800;
+
+  /*text-align: center;*/
+}
+.nav-link:hover {
+  background-color: var(--clr-lightred);
+  color: #000000;
+  padding-left: 1.5rem;
+  border-left: 0.5rem solid var(--clr-secondary);
+
+  /*text-decoration: underline;*/
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    width: 38%; /*35*/
+    max-width: 19rem; /*25*/
+  }
+}
+
+/* Styling the login button inside the navbar */
+.nav-login {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btn-login {
+  background-color: var(--clr-lightred); /* Button color */
+  color: var(--clr-white);
+  font-family: var(--ff-secondary);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+  transition: var(--transition1);
+  letter-spacing: 0.5px;
+}
+
+.btn-login:hover {
+  background-color: var(--clr-blue-3);
+  color: var(--clr-white);
+  outline: 2px solid var(--clr-blue-2);
+  outline-offset: 3px;
+  transform: scale(1.05);
+  transition: var(--transition2);
+}
+
+/*-------------Banner----------*/
+.header {
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../IQMATH/IMAGES/banner.jpg") center/cover no-repeat fixed;
+  position: relative;
+}
+
+.banner {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: lowercase;
+}
+
+.banner h3 {
+  font-family: var(--ff-Main);
+  color: transparent;
+  /*background-image: linear-gradient(
+    180deg,
+    var(--clr-com2-s),
+    var(--clr-secondary)
+  );
+  background-clip: text;*/
+  background-color: rgba(251, 76, 23, 0.845);
+  background-clip: text;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: none;
+}
+
+.banner h1 {
+  font-family: var(--ff-brand);
+  color: var(--clr-primary);
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-shadow: 2px 5px 5px var(--clr-secondary);
+  text-transform: capitalize;
+  animation: flame 1s infinite;
+}
+/*---------------Animation Code Starts------*/
+@keyframes flame {
+  0%,
+  100% {
+    text-shadow: 0 -5px 10px rgba(255, 69, 0, 0.6),
+      0 -5px 20px rgba(255, 69, 0, 0.4), 0 -5px 30px rgba(255, 69, 0, 0.2),
+      0 -5px 40px rgba(255, 69, 0, 0.1);
+  }
+  25% {
+    text-shadow: 0 -5px 15px rgba(255, 69, 0, 0.8),
+      0 -5px 30px rgba(255, 69, 0, 0.6), 0 -5px 45px rgba(255, 69, 0, 0.4),
+      0 -5px 60px rgba(255, 69, 0, 0.2);
+  }
+  50% {
+    text-shadow: 0 -5px 20px rgba(255, 69, 0, 0.8),
+      0 -5px 40px rgba(255, 69, 0, 0.6), 0 -5px 60px rgba(255, 69, 0, 0.4),
+      0 -5px 80px rgba(255, 69, 0, 0.2);
+  }
+  75% {
+    text-shadow: 0 -5px 15px rgba(255, 69, 0, 0.8),
+      0 -5px 30px rgba(255, 69, 0, 0.6), 0 -5px 45px rgba(255, 69, 0, 0.4),
+      0 -5px 60px rgba(255, 69, 0, 0.2);
+  }
+}
+/*---------------Animation Code endss------*/
+.content-div {
+  height: 0.35rem;
+  background-image: linear-gradient(
+    to left,
+    var(--clr-red),
+    var(--clr-com2-s),
+    var(--clr-red)
+  );
+}
+/*-----------------features---------*/
+.features {
+  background-color: var(--clr-grey-3);
+  cursor: pointer;
+}
+.feature {
+  padding: 2.5rem 0;
+  text-align: center;
+  transition: var(--transition1);
+  font-family: var(--ff-Main);
+}
+
+.feature-icon {
+  transition: var(--transition1);
+  height: 1rem;
+  width: 1rem;
+}
+
+.feature-title {
+  padding: -2rem 0;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.feature:hover {
+  background-color: white;
+  box-shadow: 0 2px var(--clr-lightred);
+  transition: var(--transition1);
+}
+
+.feature:hover .feature-title {
+  color: #f66773;
+}
+
+.feature:hover .feature-icon svg {
+  fill: var(--clr-lightred);
+  transform: translateY(-5px);
+  transition: var(--transition1);
+  height: 2rem;
+  width: 2rem;
+}
+@media screen and (min-width: 576px) {
+  .feature {
+    width: 50%;
+    float: left;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .feature {
+    width: 25%;
+  }
+}
+
+/**-----------About US----------*/
+.about-image,
+.about-info {
+  padding: 2rem 1.5rem;
+}
+.about-picture-container {
+  background-color: #f66773;
+  max-width: 30rem;
+  margin: 0 auto;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.about-picture {
+  transition: var(--transition1);
+}
+.about-picture-container:hover .about-picture {
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+.about-info h3 {
+  color: #000000;
+}
+
+.about-text {
+  max-width: 26rem;
+  color: var(--clr-grey-1);
+}
+
+@media screen and (min-width: 992px) {
+  .about-image,
+  .about-info {
+    float: left;
+    width: 50%;
+  }
+  .about-info {
+    padding-left: 2rem;
+  }
+}
+/**-----------About US ends- ---------*/
+
+/**-----------Service Starts- ---------*/
+.services {
+  background-color: var(--clr-grey-3);
+  cursor: pointer;
+}
+.services .service-info {
+  padding: 1rem 0;
+}
+.services .service-inventory {
+  padding: 1rem 0;
+}
+.section-title h3,
+.service-text {
+  color: #000000;
+}
+.service-text {
+  max-width: 26rem;
+  color: var(--clr-grey-1);
+}
+
+.product-img {
+  border-radius: 5px;
+  height: 17rem;
+  object-fit: cover;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.2);
+  transition: var(--transition2);
+  max-width: 30rem;
+}
+.product-img:hover {
+  box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+.product-title {
+  font-family: var(--ff-secondary);
+  font-size: 1.02rem;
+  color: black;
+  text-align: center;
+}
+.product-text {
+  max-width: 26rem;
+  color: var(--clr-grey-1);
+}
+@media screen and (min-width: 768px) {
+  .product {
+    float: left;
+    width: 50%;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .product {
+    width: 33.33%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .service-info {
+    float: left;
+    width: 30%;
+  }
+  .service-inventory {
+    float: left;
+    width: 70%;
+  }
+  .product {
+    margin: 0;
+    padding: 0 1rem;
+  }
+}
+/**-----------Service ends- ---------*/

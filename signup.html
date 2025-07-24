@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+        }
+        .container {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #28a745;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .toggle {
+            margin-top: 15px;
+            color: #007bff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="form-container">
+        <h2 id="form-title">Sign In</h2>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="submit-btn">Login</button>
+        <p class="toggle" id="toggle-form">Don't have an account? Sign Up</p>
+    </div>
+    <script>
+        const formTitle = document.getElementById("form-title");
+        const submitBtn = document.getElementById("submit-btn");
+        const toggleForm = document.getElementById("toggle-form");
+        
+        let isSignUp = false;
+        toggleForm.addEventListener("click", () => {
+            isSignUp = !isSignUp;
+            formTitle.textContent = isSignUp ? "Sign Up" : "Sign In";
+            submitBtn.textContent = isSignUp ? "Register" : "Login";
+            toggleForm.textContent = isSignUp ? "Already have an account? Sign In" : "Don't have an account? Sign Up";
+        });
+    </script>
+</body>
+</html>
